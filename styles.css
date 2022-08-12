@@ -1,0 +1,83 @@
+:root {
+    --screen-color: rgb(80, 80, 90); /* Deprecated */
+    --shade-one: rgb(30, 30, 30); /* Display background */
+    --shade-two: rgb(45, 45, 45); /* First row background */
+    --shade-three: rgb(75, 75, 75); /* Numbers background */
+    --special-color: rgb(240, 140, 15); /* Signs background */
+    /* Screen ratio: 25% */
+}
+
+body {
+    background-color: var(--shade-one);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: RobotoMono;
+    src: url(src/RobotoMono.ttf);
+}
+
+#screen {
+    font-family: "RobotoMono";
+    font-size: max(2em, 7vh);
+    height: 25vh;
+    display: flex;
+    padding: 0 0.3em;
+    overflow-wrap: unset;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+#content {
+    margin: 0;
+    align-self: center;
+    outline: none;
+    width: 100%;
+    text-align: right;
+}
+
+#keyboard {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.button {
+    display: flex;
+    font-family: "RobotoMono";
+    font-size: 1.75em;
+    background-color: var(--shade-three);
+    width: calc(100% / 4);
+    height: calc(75vh / 5 - 1px);
+    margin: .5px;
+    align-items: center;
+    place-content: center;
+    /* Forbid selecting */
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.basics {
+    background-color: var(--shade-two);
+}
+
+.special {
+    background-color: var(--special-color)
+}
+
+.two_thirds {
+    width: calc(100% * 2 / 3);
+}
+.one_third {
+    width: calc(100% / 3);
+}
